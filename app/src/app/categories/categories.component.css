@@ -1,0 +1,16 @@
+.categories{
+  width: auto;
+  margin-left: auto;
+  margin-top: auto;
+  display: flex;
+  margin-top: 2%;
+}
+.categories p{
+  width: 40%;
+  text-align: center;
+}
+#buscador{
+  width: 30%;
+  margin-left: 20%;
+  margin-right: 10%;
+}
