@@ -1,5 +1,50 @@
 <div class="header">
   <p id="saludo">Pokemon Store</p>
-  <p id="total">$0.00</p>
+  <div id="total">
+    <i (click)="showDetails(true)" class="material-icons" style="font-size:36px;">shopping_cart</i>
+    <p>$0.00</p>
+  </div>
 </div>
 <img src="https://i.pinimg.com/originals/f7/5e/8c/f75e8c8abeee3679bee0e4453f31fe6d.jpg">
+
+
+<div class="container" id="details">
+<h2>Carrito de compras: </h2>
+
+  <table class="table table-dark table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Total: $</h3>
+
+  <div class="container" id="details-btn">
+    <button (click)="showDetails(false)" type="button" class="btn btn-secondary">Cerrar</button>
+    <button type="button" class="btn btn-primary">Pagar</button>
+  </div>
+</div>

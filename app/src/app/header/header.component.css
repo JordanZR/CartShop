@@ -1,22 +1,53 @@
 
 .header{
   color: aliceblue;
-  display: flex;
   padding-top: 1%;
   position: sticky;
   background-color: black;
+  top: 0;
+  z-index: 1;
+  display: flex;
 }
 #saludo{
   width: 15%;
   text-align: center;
+  margin-right: 70%;
 }
 #total{
-  width: 10%;
-  margin-left: 75%;
-  text-align:  center;
+  display: flex;
+  width: 8%;
+  margin-right: 5%;
+}
+#total i{
+  width: 50%;
+}
+#total p{
+  width: 50%;
 }
 img{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+#details{
+  background-color: white;
+  padding: 2%;
+  width: 80%;
+  position: fixed;
+  bottom: 30%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  z-index: 3;
+  visibility: hidden;
+}
+#details-btn{
+  display: flex;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+#details-btn button{
+  width: 40%;
+  margin-left: 10%;
 }
