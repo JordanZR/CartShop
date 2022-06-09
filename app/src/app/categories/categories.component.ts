@@ -10,13 +10,14 @@ export class CategoriesComponent implements OnInit {
 
   public albums:any[] = []
   public songs:any[] = []
+  public price:number = 0;public total:number = 0
   public show(op:boolean, album:any){
     if(op){
 
       for(var i = 0; i<album.songs.length;i++){
           this.songs.push(album.songs[i])
-          console.log(this.songs[i])
       }
+      this.price = album.price
       // @ts-ignore
       document.getElementById("title").innerText = album.name + " by " + album.author
       // @ts-ignore
@@ -38,7 +39,9 @@ export class CategoriesComponent implements OnInit {
   }
 
   public add(){
-
+      this.total = this.total + this.price
+      // @ts-ignore
+      document.getElementById("total").innerText = "$" + this.total
   }
 
   constructor() { }
@@ -47,7 +50,6 @@ export class CategoriesComponent implements OnInit {
     for(let i = 0;i<mode.length;i++){
       // @ts-ignore
       this.albums.push(mode[i])
-      console.log(this.albums[i]);
     }
   }
 
