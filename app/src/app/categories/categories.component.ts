@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import mode from '../JSON/albums.json';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-categories',
@@ -50,7 +51,7 @@ export class CategoriesComponent implements OnInit {
       // @ts-ignore
       document.getElementById("fade").setAttribute("style", "visibility: visible; z-index: 3")
       // @ts-ignore
-      document.getElementById("tableTotal").innerText = "Total: $" + this.total
+      document.getElementById("tableTotal").innerText = "Total: $" + this.total.toFixed(2)
 
     }else{
       // @ts-ignore
@@ -63,8 +64,29 @@ export class CategoriesComponent implements OnInit {
   public add(){
     this.shopList.push(this.album)
     this.total = this.total + this.album.price
+    this.total.toFixed(2)
       // @ts-ignore
-    document.getElementById("total").innerText = "$" + this.total
+    document.getElementById("total").innerText = "$" + this.total.toFixed(2)
+    Swal.fire(
+      'Genial!',
+      'La cancion se ha agregado',
+      'success'
+    )
+  }
+
+  public pay(){
+    Swal.fire(
+      'Excelente!',
+      'La compra se ha realizado con exito',
+      'success'
+    )
+    this.shopList = []
+    console.log(this.shopList)
+    this.total = 0
+    // @ts-ignore
+    document.getElementById("total").innerText = "$0.00"
+    // @ts-ignore
+    document.getElementById("tableTotal").innerText = "Total: $0.00"
   }
 
   constructor() { }

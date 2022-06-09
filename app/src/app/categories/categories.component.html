@@ -35,11 +35,11 @@
     </tbody>
   </table>
 
-  <h3 id="tableTotal">Total: $</h3>
+  <h3 id="tableTotal">Total: $0.00</h3>
 
   <div class="container" id="details-btn">
     <button (click)="showDetails(false)" type="button" class="btn btn-secondary">Cerrar</button>
-    <button type="button" class="btn btn-primary">Pagar</button>
+    <button (click)="pay()" type="button" class="btn btn-primary">Pagar</button>
   </div>
 </div>
 
@@ -53,7 +53,7 @@
     <ul class="dropdown-menu">
       <li *ngFor="let album of albums"><a class="dropdown-item">{{album.category}}</a></li>
     </ul>
-    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+    <input ngModel="searchText" type="text" class="form-control" aria-label="Text input with segmented dropdown button">
     <button type="button" class="btn btn-outline-secondary">Buscar</button>
   </div>
 </div>
@@ -63,7 +63,7 @@
   <div *ngFor="let album of albums" class="card" style="width: 18rem;">
     <img src="{{album.imageURL}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{album.author}} | ${{album.price}}</h5>
+      <h5 class="card-title">{{album.author }} | {{album.price | currency}}</h5>
       <p class="card-text">{{album.about}}</p>
       <a (click)="show(true, album)" class="btn btn-primary">Detalles</a>
     </div>
