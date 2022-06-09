@@ -13,15 +13,15 @@
   text-align: center;
   margin-right: 70%;
 }
-#total{
+#cart{
   display: flex;
   width: 8%;
   margin-right: 5%;
 }
-#total i{
+#cart i{
   width: 50%;
 }
-#total p{
+#cart p{
   width: 50%;
 }
 img{

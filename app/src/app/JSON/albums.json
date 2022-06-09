@@ -1,0 +1,43 @@
+[{
+  "name": "Colores",
+  "author": "J Balvin",
+  "songs": [
+    "Azul",
+    "Rojo",
+    "Amarillo",
+    "Negro",
+    "Gris"
+  ],
+  "imageURL": "https://jenesaispop.com/wp-content/uploads/2020/03/j-balvin-colores.jpg",
+  "price": 40.59,
+  "about": "Colores es el cuarto álbum de estudio del cantante de reguetón colombiano J Balvin. Se lanzó el 19 de marzo de 2020 a través de Universal Music."
+},
+  {
+    "name": "Aztlán",
+    "author": "Zoé",
+    "songs": [
+      "Venus",
+      "No hay mal que dure",
+      "Hielo",
+      "Azul",
+      "Al final"
+    ],
+    "imageURL": "https://cdns-images.dzcdn.net/images/cover/4ac5ca4565f9e87e35f8ab2e30d68ab7/500x500.jpg",
+    "price": 45.50,
+    "about": "Aztlán es el sexto álbum de estudio de la banda de rock alternativo Zoé. Marca el regreso de la agrupación al estudio tras cinco años de la publicación"
+  },
+  {
+    "name": "Ahora",
+    "author": "Christian Nodal",
+    "songs": [
+      "Que te olvide",
+      "Para olvidarme",
+      "Juro por esta",
+      "No te contaron mal",
+      "Por orgullo"
+    ],
+    "imageURL": "https://i.scdn.co/image/ab67616d0000b2736c1281eccac823bd368f8782",
+    "price": 50.29,
+    "about": "Ahora es el segundo álbum de estudio del cantante mexicano Christian Nodal, lanzado el 10 de mayo de 2019."
+  }
+]
