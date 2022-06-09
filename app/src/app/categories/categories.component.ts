@@ -9,15 +9,17 @@ import mode from '../JSON/albums.json';
 export class CategoriesComponent implements OnInit {
 
   public albums:any[] = []
+  public album:any = {}
   public songs:any[] = []
-  public price:number = 0;public total:number = 0
+  public total:number = 0
+  public shopList:any[] = []
+
   public show(op:boolean, album:any){
     if(op){
-
+      this.album = album
       for(var i = 0; i<album.songs.length;i++){
           this.songs.push(album.songs[i])
       }
-      this.price = album.price
       // @ts-ignore
       document.getElementById("title").innerText = album.name + " by " + album.author
       // @ts-ignore
@@ -31,6 +33,7 @@ export class CategoriesComponent implements OnInit {
       // @ts-ignore
       document.getElementById("fade").setAttribute("style", "visibility: visible; z-index: 3")
     }else{
+      this.songs.splice(0)
       // @ts-ignore
       document.getElementById("Popup").setAttribute("style", "visibility: hidden")
       // @ts-ignore
@@ -38,10 +41,30 @@ export class CategoriesComponent implements OnInit {
     }
   }
 
-  public add(){
-      this.total = this.total + this.price
+  public showDetails(op:boolean){
+    if(op){
       // @ts-ignore
-      document.getElementById("total").innerText = "$" + this.total
+      document.getElementById("details").setAttribute("style", "visibility: visible; z-index:4")
+      // @ts-ignore
+      document.getElementById("Popup").setAttribute("style", "visibility: hidden")
+      // @ts-ignore
+      document.getElementById("fade").setAttribute("style", "visibility: visible; z-index: 3")
+      // @ts-ignore
+      document.getElementById("tableTotal").innerText = "Total: $" + this.total
+
+    }else{
+      // @ts-ignore
+      document.getElementById("details").setAttribute("style", "visibility: hidden")
+      // @ts-ignore
+      document.getElementById("fade").setAttribute("style", "visibility: hidden; z-index: 0")
+    }
+  }
+
+  public add(){
+    this.shopList.push(this.album)
+    this.total = this.total + this.album.price
+      // @ts-ignore
+    document.getElementById("total").innerText = "$" + this.total
   }
 
   constructor() { }

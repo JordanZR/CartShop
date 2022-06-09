@@ -1,3 +1,48 @@
+<div id="fade">
+
+</div>
+<div class="header">
+  <p id="saludo">Your Music Store</p>
+  <div id="cart">
+    <a (click)="showDetails(true)" href="#"><i (click)="showDetails(true)" class="material-icons" style="font-size:36px;">shopping_cart</i></a>
+    <a (click)="showDetails(true)" href="#" id="total">$0.00</a>
+  </div>
+</div>
+<img src="https://timelinecovers.pro/facebook-cover/download/without-music-life-would-be-a-mistake-facebook-cover.jpg">
+
+
+<div class="container" id="details">
+  <h2>Carrito de compras: </h2>
+
+  <table class="table table-dark table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Author</th>
+      <th scope="col">Album</th>
+      <th scope="col">Category</th>
+      <th scope="col">Songs</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let list of shopList">
+      <th scope="row">{{list.author}}</th>
+      <td>{{list.name}}</td>
+      <td>{{list.category}}</td>
+      <td>{{list.songs.length}}</td>
+      <td>{{list.price}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3 id="tableTotal">Total: $</h3>
+
+  <div class="container" id="details-btn">
+    <button (click)="showDetails(false)" type="button" class="btn btn-secondary">Cerrar</button>
+    <button type="button" class="btn btn-primary">Pagar</button>
+  </div>
+</div>
+
 <div id="categories">
   <p>Productos de la categoria: </p>
 
@@ -6,10 +51,7 @@
       Categorias
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-      <li><a class="dropdown-item" href="#">Separated link</a></li>
+      <li *ngFor="let album of albums"><a class="dropdown-item">{{album.category}}</a></li>
     </ul>
     <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
     <button type="button" class="btn btn-outline-secondary">Buscar</button>
